@@ -15,3 +15,7 @@ version 0.1
  - created add-denomination , list-denominations , menu partials
  - created dashboard-view, login-view and signup-view pages
  - add content to add-denomination, list-denominations , menu , dashboard-view , login-view , signup-view
+ - created accounts-controller.js 
+ - add code for dashboard-controller and accounts-controller
+ - added more routes to web-routes.js 
+ - updated server.js
