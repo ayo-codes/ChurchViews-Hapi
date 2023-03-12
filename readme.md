@@ -4,4 +4,10 @@ version 0.1
  - installed @hapi/hapi 
  - changed start script from index.js to src/server.js and included lint 
  - installed @hapi/vision and handlebars
- - 
+ - created views folder with partials and layouts and main.hbs and icon
+ - created dashboard controller.js
+ - created web-routes.js
+ - installed nodemon 
+ - created models folder with mem folder as a sub-folder
+ - created a denomination-mem-store and a user-mem-store
+ - installed uuid to manage unique id generation
