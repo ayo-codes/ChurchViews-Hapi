@@ -11,3 +11,6 @@ version 0.1
  - created models folder with mem folder as a sub-folder
  - created a denomination-mem-store and a user-mem-store
  - installed uuid to manage unique id generation
+ - added content to denomination-mem-store and user-mem-store and wrapped it in db.js facade
+ - created add-denomination , list-denominations , menu partials
+ - created dashboard-view, login-view and signup-view pages
