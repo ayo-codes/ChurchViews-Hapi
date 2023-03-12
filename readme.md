@@ -1,4 +1,4 @@
-version 0.1
+version 0.1.0
  - created package.json
  - set the code quality tools
  - installed @hapi/hapi 
@@ -19,3 +19,8 @@ version 0.1
  - add code for dashboard-controller and accounts-controller
  - added more routes to web-routes.js 
  - updated server.js
+
+version 0.2.0
+- Created about-view , created about-controller.js
+- added code to about-view and about-controller.js
+- updated menu.hbs , web-routes.js
