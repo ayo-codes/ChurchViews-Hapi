@@ -34,3 +34,4 @@ version 0.2.0
 - imported Cookie and accountsController into server.js 
 - added validate method to accountsController
 - added cookie as a method to manage sessions 
+- turn authentication to false for the accounts-controller.js methods (auth:false) to allow us to log-in
