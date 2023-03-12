@@ -18,7 +18,7 @@ export const accountsController = {
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
-      return h.redirect("/dashboard");  // modified signup flow
+      return h.redirect("/");  // modified signup flow does not work as it redirects into previous signup's account
     },
   },
   showLogin: {

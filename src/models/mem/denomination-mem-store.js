@@ -28,4 +28,9 @@ export const denominationMemStore = {
   async deleteAlldenominations() {
     denominations = [];
   },
+
+  async getUserDenominations(userid) {
+    return denominations.filter((denomination) => denomination.userid === userid);
+  },
+
 };
