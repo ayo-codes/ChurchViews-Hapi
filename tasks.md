@@ -24,3 +24,6 @@ version 0.2.0
 - Created about-view , created about-controller.js
 - added code to about-view and about-controller.js
 - updated menu.hbs , web-routes.js
+- created new partials , list-churches.hbs and add-church.hbs
+- created a new view, denomination-view.hbs
+
