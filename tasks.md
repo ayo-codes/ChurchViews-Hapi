@@ -26,4 +26,8 @@ version 0.2.0
 - updated menu.hbs , web-routes.js
 - created new partials , list-churches.hbs and add-church.hbs
 - created a new view, denomination-view.hbs
+- created new church-mem-store.js
+- updated db.js to include the church-mem-store
+- created a denomination-controller.js 
+- updated web-routes.js to include routes to see denomination and also to add a church 
 

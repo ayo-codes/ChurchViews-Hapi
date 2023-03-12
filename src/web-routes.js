@@ -1,6 +1,7 @@
 import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
+import { denominationController } from "./controllers/denomination-controller.js";
 
 export const webRoutes = [
   // accounts controllers
@@ -16,5 +17,9 @@ export const webRoutes = [
   { method: "POST", path: "/dashboard/adddenomination", config: dashboardController.addDenomination },
 
   // about controllers
-  {method:"GET", path:"/about", config: aboutController.index}
+  {method:"GET", path:"/about", config: aboutController.index},
+
+  // denomination controllers
+  {method:"GET", path:"/denomination/{id}", config:denominationController.index},
+  {method:"POST", path:"/denomination/{id}/addchurch", config:denominationController.addChurch}
 ];
