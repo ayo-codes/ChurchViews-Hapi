@@ -35,3 +35,5 @@ version 0.2.0
 - added validate method to accountsController
 - added cookie as a method to manage sessions 
 - turn authentication to false for the accounts-controller.js methods (auth:false) to allow us to log-in
+- added new method to denomination-mem-store.js called getUserDenominations 
+- updated dashboard-controller.js index and addDenomination, to include user specific information
