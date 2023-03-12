@@ -14,3 +14,4 @@ version 0.1
  - added content to denomination-mem-store and user-mem-store and wrapped it in db.js facade
  - created add-denomination , list-denominations , menu partials
  - created dashboard-view, login-view and signup-view pages
+ - add content to add-denomination, list-denominations , menu , dashboard-view , login-view , signup-view
