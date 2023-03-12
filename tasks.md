@@ -30,4 +30,7 @@ version 0.2.0
 - updated db.js to include the church-mem-store
 - created a denomination-controller.js 
 - updated web-routes.js to include routes to see denomination and also to add a church 
-
+- installed @hapi/cookie and registered the plugin to use for sessions in server.js
+- imported Cookie and accountsController into server.js 
+- added validate method to accountsController
+- added cookie as a method to manage sessions 
