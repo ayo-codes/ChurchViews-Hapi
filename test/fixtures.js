@@ -24,4 +24,22 @@ export const testUsers = [
     email: "bart@simpson.com",
     password: "secret",
   },
+
+  
+];
+
+export const anglican = {
+  title: "Anglican Churches"
+};
+
+export const testDenominations = [
+  {
+    title: "Catholic Churches"
+  },
+  {
+    title: "Methodist Churches"
+  },
+  {
+    title: "Pentecostal Churches"
+  }
 ];

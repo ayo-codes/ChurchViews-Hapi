@@ -16,16 +16,19 @@ export const denominationMemStore = {
 
   async getDenominationById(id) {
     const list = denominations.find((denomination) => denomination._id === id); // store the result of the search in a variable 
-    list.churches = await churchMemStore.getChurchesByDenominationId(list._id); // pass the list id which is the id from the denominations.find result , into the search of getChurchesByDenominationId 
-    return list;
+    if (list) {
+      list.churches = await churchMemStore.getChurchesByDenominationId(list._id); // pass the list id which is the id from the denominations.find result , into the search of getChurchesByDenominationId 
+      return list;
+    }
+    return null;
   },
 
   async deleteDenominationById(id) {
     const index = denominations.findIndex((denomination) => denomination._id === id);
-    denominations.splice(index, 1);
+    if (index !== -1) denominations.splice(index, 1);
   },
 
-  async deleteAlldenominations() {
+  async deleteAllDenominations() {
     denominations = [];
   },
 

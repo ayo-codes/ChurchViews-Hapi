@@ -34,3 +34,7 @@ version 0.4.0
 - installed mocha and chai for testing
 - used the concept of fixtures to populate user data for the tests
 - created tests to create/delete/get users  
+
+version 0.5.0
+- created an easier way to switch between db Stores
+- created test for denomination-mem-store and denomination json-store

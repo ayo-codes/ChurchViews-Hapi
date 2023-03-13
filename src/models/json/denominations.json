@@ -1,3 +1,16 @@
 {
-  "denominations": []
+  "denominations": [
+    {
+      "title": "Catholic Churches",
+      "_id": "75c60786-7377-4026-82e9-55459baeb690"
+    },
+    {
+      "title": "Methodist Churches",
+      "_id": "c6e7cf54-49b7-4d2d-89ba-a7ddb927e2da"
+    },
+    {
+      "title": "Pentecostal Churches",
+      "_id": "a23c20d3-6050-4825-a6f1-443853dfedb2"
+    }
+  ]
 }

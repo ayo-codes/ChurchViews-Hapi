@@ -22,8 +22,12 @@ export const denominationJsonStore = {
 
   async getDenominationById(id) {
     await db.read();
-    const list = db.data.denominations.find((denomination) => denomination._id === id);
-    list.churches = await churchJsonStore.getChurchesByDenominationId(list._id);
+    let list = db.data.denominations.find((denomination) => denomination._id === id);
+    if (list) {
+      list.churches = await churchJsonStore.getChurchesByDenominationId(list._id);
+    } else {
+      list = null;
+    }
     return list;
   },
 
@@ -35,7 +39,7 @@ export const denominationJsonStore = {
   async deleteDenominationById(id) {
     await db.read();
     const index = db.data.denominations.findIndex((denomination) => denomination._id === id);
-    db.data.denominations.splice(index, 1);
+    if (index !== -1) db.data.denominations.splice(index, 1);
     await db.write();
   },
 

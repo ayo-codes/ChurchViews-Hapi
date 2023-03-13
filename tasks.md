@@ -85,3 +85,10 @@ version 0.4.0
 - created a "delete One user -fail" test which tests for deleting a user, when we use a non-existent id 
 - moved the for loop to create test users to the setup of the test
 
+version 0.5.0
+- modified db.js to allow for switching of models used btwn json and mem
+- updated user-mem-store getUserById and getUserByEmail 
+- added  a test denomination and testdenominations-array to fixtures.js 
+- created denomination-model-test.js 
+- modified getDenominationById and deleteDenominationById in memStore and JsonStore
+
