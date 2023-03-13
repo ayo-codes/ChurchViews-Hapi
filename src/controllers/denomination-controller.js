@@ -26,4 +26,12 @@ export const denominationController = {
       return h.redirect(`/denomination/${denomination._id}`);
     },
   },
+  deleteChurch: {
+    handler: async function(request, h) {
+      const denomination = await db.denominationStore.getDenominationById(request.params.id);
+      await db.churchStore.deleteChurch(request.params.churchid);
+      return h.redirect(`/denomination/${denomination._id}`);
+    },
+  },
+
 };

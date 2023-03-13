@@ -37,3 +37,9 @@ version 0.2.0
 - turn authentication to false for the accounts-controller.js methods (auth:false) to allow us to log-in
 - added new method to denomination-mem-store.js called getUserDenominations 
 - updated dashboard-controller.js index and addDenomination, to include user specific information
+
+
+version 0.3.0 
+- modified the list-denominations.hbs (/denomination/deletedenomination/{{id}}) and list-churches.hbs (/denomination/{{../denomination._id}}/deletechurch/{{_id}}) file to include a delete features 
+- updated web-routes to reflect this
+- created new controllers for to implement this features on dashboard-controller(deleteDenomination) and denomination-controller(deleteChurch)

@@ -25,4 +25,13 @@ export const dashboardController = {
       return h.redirect("/dashboard");
     },
   },
+
+  deleteDenomination: {
+    handler: async function (request, h) {
+      const denomination = await db.denominationStore.getDenominationById(request.params.id);
+      await db.denominationStore.deleteDenominationById(denomination._id);
+      return h.redirect("/dashboard");
+    },
+  },
+
 };

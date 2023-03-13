@@ -15,11 +15,13 @@ export const webRoutes = [
   // dashboard controllers
   { method: "GET", path: "/dashboard", config: dashboardController.index },
   { method: "POST", path: "/dashboard/adddenomination", config: dashboardController.addDenomination },
+  {method:"GET", path:"/dashboard/deletedenomination/{id}", config:dashboardController.deleteDenomination},
 
   // about controllers
   {method:"GET", path:"/about", config: aboutController.index},
 
   // denomination controllers
   {method:"GET", path:"/denomination/{id}", config:denominationController.index},
-  {method:"POST", path:"/denomination/{id}/addchurch", config:denominationController.addChurch}
+  {method:"POST", path:"/denomination/{id}/addchurch", config:denominationController.addChurch},
+  { method: "GET", path: "/denomination/{id}/deletechurch/{churchid}", config: denominationController.deleteChurch }
 ];
