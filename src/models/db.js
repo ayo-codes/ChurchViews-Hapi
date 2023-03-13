@@ -1,6 +1,10 @@
-import { userMemStore } from "./mem/user-mem-store.js";
-import { denominationMemStore } from "./mem/denomination-mem-store.js";
-import { churchMemStore } from "./mem/church-mem-store.js";
+// import { userMemStore } from "./mem/user-mem-store.js";
+// import { denominationMemStore } from "./mem/denomination-mem-store.js";
+// import { churchMemStore } from "./mem/church-mem-store.js";
+
+import { userJsonStore } from "./json/user-json-store.js";
+import { denominationJsonStore } from "./json/denomination-json-store.js";
+import { churchJsonStore } from "./json/church-json-store.js";
 
 export const db = {
   userStore: null,
@@ -8,8 +12,8 @@ export const db = {
   churchStore: null,
 
   init() {
-    this.userStore = userMemStore;
-    this.denominationStore = denominationMemStore;
-    this.churchStore = churchMemStore;
+    this.userStore = userJsonStore;
+    this.denominationStore = denominationJsonStore;
+    this.churchStore = churchJsonStore;
   },
 };

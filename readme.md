@@ -27,3 +27,4 @@ version 0.3.0
 - installed lowdb to manage JSON database 
 - created JSON files for denominations, churches and users
 - created Json-store.js for denominations, churches and users to give functionality to database
+- linked JSON stores to db.js 

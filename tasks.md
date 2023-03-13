@@ -63,3 +63,4 @@ version 0.3.0
 - created and populated json file to store the churches
 - created and populated user-json-store to create functionality using array methods to manage users on the app
 - created and populated json file to store the users
+- linked the JSON stores to the db.js 
