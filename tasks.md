@@ -70,3 +70,18 @@ version 0.4.0
 - updated the accounts-controller.js to add the schema to login 
 - updated the dashboard-controller.js to add the schema to add-denominations form config 
 - updated the denomination-controller.js to add the schema to the add-churches form config
+- installed Mocha 
+- installed chai 
+- created test folder
+- created user-model-test.js 
+- added test: to package.json scripts
+- created fixtures.js to hold templates of a user, maggie and an array of testUsers
+- created "create a user " test
+- created "delete all users" test plus deleting allusers before the test runs
+- created a "get a user -success" test by id and by email
+- due to a bug shown in the tests , updated the getUserbyId and getUserByEmail methods in the User-Json-store file
+- created a "get a user-failures" test, which tests for users where neither the id nor email is registered
+- created a "get a user - bad params" test, which tests for users with empty parameters
+- created a "delete One user -fail" test which tests for deleting a user, when we use a non-existent id 
+- moved the for loop to create test users to the setup of the test
+

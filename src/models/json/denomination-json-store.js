@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
-import { churchJsonStore } from "./church-json-store";
+import { churchJsonStore } from "./church-json-store.js";
 
 const db = new Low(new JSONFile("./src/models/json/denominations.json"));
 db.data = { denominations: [] };

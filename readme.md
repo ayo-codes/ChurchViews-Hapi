@@ -31,3 +31,6 @@ version 0.3.0
 
 version 0.4.0
 - added Joi schemas to login form, add church form and add denomination form 
+- installed mocha and chai for testing
+- used the concept of fixtures to populate user data for the tests
+- created tests to create/delete/get users  

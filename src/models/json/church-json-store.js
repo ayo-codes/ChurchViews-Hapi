@@ -11,7 +11,7 @@ export const churchJsonStore = {
     return db.data.churches;
   },
 
-  async addChurches(denominationId, church) {
+  async addChurch(denominationId, church) {
     await db.read();
     church._id = v4();
     church.denominationid = denominationId;
