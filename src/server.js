@@ -2,6 +2,7 @@ import Hapi from "@hapi/hapi";
 import Vision from "@hapi/vision";
 import Cookie from "@hapi/cookie"; // for use with the cookies
 import Handlebars from "handlebars";
+import dotenv from "dotenv";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -11,6 +12,12 @@ import { accountsController } from "./controllers/accounts-controller.js"; // fo
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const result = dotenv.config();
+if (result.error) {
+  console.log(result.error.message);
+  process.exit(1);
+}
 
 async function init() {
   const server = Hapi.server({
@@ -33,8 +40,8 @@ async function init() {
   });
   server.auth.strategy("session", "cookie", {
     cookie: {
-      name: "church",
-      password: "secretpasswordnotrevealedtoanyone",
+      name: process.env.cookie_name,
+      password: process.env.cookie_password,
       isSecure: false,
     },
     redirectTo: "/",

@@ -13,3 +13,5 @@ version 0.2.0
 - implemented using cookies to manage sessions
 - implemented an authentication strategy for the app
 - implemented feature to make sure users only see their own data
+- installed dotenv
+- implemented .env file for cookie_name and cookie_password and created .env_example

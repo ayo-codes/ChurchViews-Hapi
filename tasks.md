@@ -43,3 +43,7 @@ version 0.3.0
 - modified the list-denominations.hbs (/denomination/deletedenomination/{{id}}) and list-churches.hbs (/denomination/{{../denomination._id}}/deletechurch/{{_id}}) file to include a delete features 
 - updated web-routes to reflect this
 - created new controllers for to implement this features on dashboard-controller(deleteDenomination) and denomination-controller(deleteChurch)
+- installed .env
+- import dotenv to server.js
+- move cookie information from server.js to .env file
+- created .env_example
