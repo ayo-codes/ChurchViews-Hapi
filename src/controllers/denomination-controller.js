@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import { ChurchSpec } from "../models/joi-schemas.js";
 
 export const denominationController = {
   index: {
@@ -13,6 +14,13 @@ export const denominationController = {
   },
 
   addChurch: {
+    validate: {
+      payload: ChurchSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("denomination-view", { title: "Add church error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const denomination = await db.denominationStore.getDenominationById(request.params.id);
       const newChurch = {

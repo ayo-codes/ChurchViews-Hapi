@@ -28,3 +28,6 @@ version 0.3.0
 - created JSON files for denominations, churches and users
 - created Json-store.js for denominations, churches and users to give functionality to database
 - linked JSON stores to db.js 
+
+version 0.4.0
+- added Joi schemas to login form, add church form and add denomination form 
