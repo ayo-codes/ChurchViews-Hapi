@@ -16,3 +16,6 @@ version 0.2.0
 - installed dotenv
 - implemented .env file for cookie_name and cookie_password and created .env_example
 - implemented cookie_deletion on logout
+- installed joi for validation of inputs on forms
+- added error reporting for validation errors on pages via layout.hbs 
+- implemented validation on signup form

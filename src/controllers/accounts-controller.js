@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import { UserSpec } from "../models/joi-schemas.js";
 
 export const accountsController = {
   index: {
@@ -15,6 +16,13 @@ export const accountsController = {
   },
   signup: {
     auth: false,
+    validate: { // joi-schema validation 
+      payload: UserSpec,
+      options: {abortEarly : false},
+      failAction: function (request, h, error) {
+        return h.view("signup-view", { title: "Sign up error", errors: error.details }).takeover().code(400); // title shows in browser tab header , error.details passes errors to error partials 
+      },
+    },
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);

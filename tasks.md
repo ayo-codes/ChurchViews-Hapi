@@ -48,3 +48,12 @@ version 0.3.0
 - move cookie information from server.js to .env file
 - created .env_example
 - added cookie deletion (request.cookieAuth.clear()) upon logout
+- installed Joi, which is used for validation
+- created models/joi-schemas.js 
+- modified the accounts-controller.js to include UserSpec from joi-schemas.js
+- import Joi to server.js and add server.validator(Joi) to server.js 
+- created error.hbs partial 
+- included the error partial on the layout.hbs page , so it comes up on anypage
+- modified the return h.view on the signup action, to include errors:error.details. So that the error details will be passed to the views , on the signup form
+- included options: {abortEarly:false} to let all errors show up on page , instead of just the first one 
+
