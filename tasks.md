@@ -47,3 +47,4 @@ version 0.3.0
 - import dotenv to server.js
 - move cookie information from server.js to .env file
 - created .env_example
+- added cookie deletion (request.cookieAuth.clear()) upon logout

@@ -15,3 +15,4 @@ version 0.2.0
 - implemented feature to make sure users only see their own data
 - installed dotenv
 - implemented .env file for cookie_name and cookie_password and created .env_example
+- implemented cookie_deletion on logout
