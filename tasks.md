@@ -56,4 +56,10 @@ version 0.3.0
 - included the error partial on the layout.hbs page , so it comes up on anypage
 - modified the return h.view on the signup action, to include errors:error.details. So that the error details will be passed to the views , on the signup form
 - included options: {abortEarly:false} to let all errors show up on page , instead of just the first one 
-
+- installed lowdb to help manage JSON store
+- created and populated denomination-json-store to create functionality using array methods to manage denominations on the app
+- created and populated json file to store the denominations
+- created and populated church-json-store to create functionality using array methods to manage churches on the app
+- created and populated json file to store the churches
+- created and populated user-json-store to create functionality using array methods to manage users on the app
+- created and populated json file to store the users
