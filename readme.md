@@ -38,3 +38,6 @@ version 0.4.0
 version 0.5.0
 - created an easier way to switch between db Stores
 - created test for denomination-mem-store and denomination json-store
+- installed mongoose to use with mongo
+- created user-mongo-store and tested it 
+- updated tests to allow for mongo generated fields 

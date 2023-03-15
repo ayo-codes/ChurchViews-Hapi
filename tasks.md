@@ -91,4 +91,17 @@ version 0.5.0
 - added  a test denomination and testdenominations-array to fixtures.js 
 - created denomination-model-test.js 
 - modified getDenominationById and deleteDenominationById in memStore and JsonStore
+- created mongo db directory 
+- installed mongoose 
+- created folder to store mongo files 
+- created the user schema with mongoose
+- created user-mongo-store.js 
+- added "mongo" option to db.init on server.js 
+- added db details to .env file
+- created connect.js for mongo 
+- imported the connect.js and user-mongo-store.js into db.js
+- created test-utils.js to manage mongo generated fields 
+- updated user-model-tests with assertSubset 
+- updated setup on user-model-tests so that testUsers array stores mongo generated fields 
+
 

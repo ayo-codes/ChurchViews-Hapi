@@ -51,7 +51,7 @@ async function init() {
   });
   server.auth.default("session"); // this sets the default authentication strategy
 
-  db.init();
+  db.init("mongo");
   server.route(webRoutes);
   await server.start();
   console.log("Server running on %s", server.info.uri);
