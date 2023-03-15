@@ -114,6 +114,14 @@ version 0.6.0
 - extended fixtures.js to include a test church and an array of testChurches.
 - created the church-model-tests.
 - Refactored the test folder ,created models folder and api folder
-- created user-api-test.js and playtime-service.js
+- created user-api-test.js and churchview-service.js
 - modified test in package.json to view sub-folders
+- installed Boom for APIs 
+- created src/api folder with api-routes.js and users-api.js
+- user-api.js with create and find methods
+- api-routes.js with post and get methods 
+- added apiRoutes to server.js
+- installed Axios , a HTTP Client library
+- included serviceUrl in fixtures.js
+- added more data to churchview-service and user-api-test.js
 

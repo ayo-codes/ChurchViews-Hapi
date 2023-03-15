@@ -75,4 +75,7 @@ export const testChurches = [
     "longitude":-6.2748843,
   }
 
-]
+];
+
+export const serviceUrl = "http://localhost:3000";
+

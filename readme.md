@@ -51,3 +51,4 @@ version 0.6.0
 - updated fixtures.js to include testchurches[] and a single testchurch
 - created a set of tests for the church models
 - Refactored test folder and created user-api-test.js and playtime-service.js
+- added more tests for user-apis.
