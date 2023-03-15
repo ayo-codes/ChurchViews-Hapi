@@ -113,4 +113,7 @@ version 0.6.0
 - imported church-mongo-store to db.js 
 - extended fixtures.js to include a test church and an array of testChurches.
 - created the church-model-tests.
+- Refactored the test folder ,created models folder and api folder
+- created user-api-test.js and playtime-service.js
+- modified test in package.json to view sub-folders
 
