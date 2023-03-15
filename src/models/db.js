@@ -8,6 +8,7 @@ import { churchJsonStore } from "./json/church-json-store.js";
 
 import { connectMongo } from "./mongo/connect.js";
 import { userMongoStore } from "./mongo/user-mongo-store.js";
+import { denominationMongoStore } from "./mongo/denomination-mongo-store.js";
 
 export const db = {
   userStore: null,
@@ -23,6 +24,7 @@ export const db = {
         break;
       case "mongo":
         this.userStore = userMongoStore;
+        this.denominationStore = denominationMongoStore;
         connectMongo();
         break;
       default:

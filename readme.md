@@ -41,3 +41,7 @@ version 0.5.0
 - installed mongoose to use with mongo
 - created user-mongo-store and tested it 
 - updated tests to allow for mongo generated fields 
+- created denomination.js for the schema and denomination-mongo-store.js for functions 
+- created church.js for the church schema and church-mongo-store.js for the functions 
+- connected denominationMongoStore to db.js
+- included EventEmitter in denomination-model-test.js 

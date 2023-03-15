@@ -103,5 +103,9 @@ version 0.5.0
 - created test-utils.js to manage mongo generated fields 
 - updated user-model-tests with assertSubset 
 - updated setup on user-model-tests so that testUsers array stores mongo generated fields 
+- added schemas for churches and denominations for mongo
+- added church-mongo-store and denomination-mongo-store 
+- modified the  'create a denomination' and 'get a denomination' tests to reflect assertSubset
+- added event emitter to denomination-model-test.js 
 
 

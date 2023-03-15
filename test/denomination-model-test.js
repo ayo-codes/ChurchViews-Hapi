@@ -1,11 +1,16 @@
 import { assert } from "chai";
+import { EventEmitter } from "events";
 import { db } from "../src/models/db.js";
 import { testDenominations, anglican } from "./fixtures.js";
+import { assertSubset } from "./test-utils.js";
+
+
+EventEmitter.setMaxListeners(25);
 
 suite("Denomination Model tests", () => {
 
   setup(async () => {
-    db.init("");
+    db.init("mongo");
     await db.denominationStore.deleteAllDenominations();
     for (let i = 0; i < testDenominations.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
@@ -15,7 +20,7 @@ suite("Denomination Model tests", () => {
 
   test("create a denomination", async () => {
     const denomination = await db.denominationStore.addDenomination(anglican);
-    assert.equal(anglican, denomination);
+    assertSubset(anglican, denomination);
     assert.isDefined(denomination._id);
   });
 
@@ -30,7 +35,7 @@ suite("Denomination Model tests", () => {
   test("get a denomination - success", async () => {
     const denomination = await db.denominationStore.addDenomination(anglican);
     const returnedDenomination = await db.denominationStore.getDenominationById(denomination._id);
-    assert.equal(anglican, denomination);
+    assertSubset(anglican, denomination);
   });
 
   test("delete One Denomination - success", async () => {
