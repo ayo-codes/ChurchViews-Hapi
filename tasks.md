@@ -104,8 +104,13 @@ version 0.5.0
 - updated user-model-tests with assertSubset 
 - updated setup on user-model-tests so that testUsers array stores mongo generated fields 
 - added schemas for churches and denominations for mongo
-- added church-mongo-store and denomination-mongo-store 
+- added church-mongo-store (skeleton) and denomination-mongo-store 
 - modified the  'create a denomination' and 'get a denomination' tests to reflect assertSubset
 - added event emitter to denomination-model-test.js 
 
+version 0.6.0 
+- updated the church-mongo-store to have more functions 
+- imported church-mongo-store to db.js 
+- extended fixtures.js to include a test church and an array of testChurches.
+- created the church-model-tests.
 
