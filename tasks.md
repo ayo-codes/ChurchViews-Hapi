@@ -140,3 +140,9 @@ version 0.7.0
 - created church-api.js skeleton
 - added church routes to api-routes
 - created church-api-test.js skeleton
+
+version 0.8.0 
+- updated church-api.js to build out the methods 
+- updated church-api-test.js to build out the tests
+- updated dev in package.json to exclude monitoring json store files
+- updated dev in package.json to split tests into testmodels and testapi.

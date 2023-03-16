@@ -57,3 +57,8 @@ version 0.7.0
 - created denomination-api-tests.js and denomination-api.js
 - updated api-routes to reflect denomination routes
 - created the skeleton for church-api-test.js and church-api.js 
+
+version 0.8.0
+- updated church-api-test.js to include the body of the tests.
+- updated church-api.js to include more actions 
+-
