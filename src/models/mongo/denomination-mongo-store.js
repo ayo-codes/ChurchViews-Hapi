@@ -11,7 +11,7 @@ export const denominationMongoStore = {
     if (id) {
       const denomination = await Denomination.findOne({ _id: id }).lean();
       if (denomination) {
-        denomination.tracks = await churchMongoStore.getChurchesByDenominationId(denomination._id);
+        denomination.churches = await churchMongoStore.getChurchesByDenominationId(denomination._id);
       }
       return denomination;
     }

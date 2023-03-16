@@ -161,3 +161,6 @@ version 0.9.0
 - created UserCrendentialsSpec as "UserCrendentials" and UserSpecPlus as "UserDetailsPlus" in joi-schema.
 - updated userApi.create.validate to UserSpec and userApi.create.response to UserSpecPlus
 - updated tests to include a users array , rather than testUsers
+- updated the Church Schema, and separated them out into ChurchSpec and ChurchSpecPlus.
+- updated the church-api.js with swagger options
+- updated the Denomination Schema and separated them out into DenominationSpec and DenominationSpecPlus

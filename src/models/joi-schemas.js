@@ -25,17 +25,35 @@ export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
 // We use UserArray to return an array of UserSpecPlus , that's what the difference is between it and UserSpecPlus
 
+// Schema for Add Church Form modified for the web API
+export const ChurchSpec = Joi.object().keys ({
+  name: Joi.string().required().example("Whitefriar Street Church"),
+  description: Joi.string().required().example("Catholic place of worship built to George Papworth's design in 1827"),
+  latitude: Joi.number().allow("").optional().example(53.3174463),
+  longitude: Joi.number().allow("").optional().example(-6.2695732),
+  denominationid: IdSpec,
+}).label("Church");
 
+// separated the mongo generated fields
+export const ChurchSpecPlus = ChurchSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("ChurchPlus")
 
-// Schema for Add Church Form
-export const ChurchSpec = {
-  name: Joi.string().required(),
-  description: Joi.string().required(),
-  latitude: Joi.number().allow("").optional(),
-  longitude: Joi.number().allow("").optional(),
-};
+// This is used for when you need to return an array/list of churches
+export const ChurchArraySpec = Joi.array().items(ChurchSpecPlus).label("ChurchArray");
+
 
 // Schema for Add Denomination Form
-export const DenominationSpec = {
-  title: Joi.string().required(),
-};
+export const DenominationSpec = Joi.object().keys ({
+  title: Joi.string().required().example("Anglican"),
+  userid: IdSpec,
+  churches: ChurchArraySpec,
+}).label("Denomination");
+
+export const DenominationSpecPlus = DenominationSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("DenominationPlus");
+
+export const DenominationArraySpec = Joi.array().items(DenominationSpecPlus).label("DenominationArray");

@@ -1,5 +1,7 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
+import { IdSpec, ChurchSpec , ChurchSpecPlus , ChurchArraySpec } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const churchApi = {
   find: {
@@ -12,6 +14,10 @@ export const churchApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    response: { schema: ChurchArraySpec, failAction: validationError },
+    description: "Get all churchApi",
+    notes: "Returns all churches in the database via the Api",
   },
 
   findOne: {
@@ -27,6 +33,11 @@ export const churchApi = {
         return Boom.serverUnavailable("No church with this id");
       }
     },
+    tags: ["api"],
+    description: "Find a Church",
+    notes: "Returns a Church",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: ChurchSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -42,6 +53,11 @@ export const churchApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a church",
+    notes: "Returns the newly created church",
+    validate: { payload: ChurchSpec },
+    response: { schema: ChurchSpecPlus, failAction: validationError }
   },
 
   deleteAll: {
@@ -54,6 +70,8 @@ export const churchApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Deletes all churches in the database via the churchApi",
   },
 
   deleteOne: {
@@ -70,5 +88,8 @@ export const churchApi = {
         return Boom.serverUnavailable("No church with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a church",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };
