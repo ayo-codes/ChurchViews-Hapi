@@ -64,3 +64,6 @@ version 0.8.0
 - installed inert to manage static images
 - installed hapi-swagger 
 - created swagger documentation for userAPIs 
+
+version 0.9.0
+- updated User Schema and improved user-tests. 

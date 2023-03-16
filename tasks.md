@@ -156,3 +156,8 @@ version 0.8.0
 - imported validationError into user-api.js
 - created IdSpec , which specifies Ids 
 - added a validation for input of user APIs create and findOne.
+
+version 0.9.0
+- created UserCrendentialsSpec as "UserCrendentials" and UserSpecPlus as "UserDetailsPlus" in joi-schema.
+- updated userApi.create.validate to UserSpec and userApi.create.response to UserSpecPlus
+- updated tests to include a users array , rather than testUsers
