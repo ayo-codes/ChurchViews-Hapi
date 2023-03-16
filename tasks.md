@@ -146,3 +146,13 @@ version 0.8.0
 - updated church-api-test.js to build out the tests
 - updated dev in package.json to exclude monitoring json store files
 - updated dev in package.json to split tests into testmodels and testapi.
+- installed inert to manage static images
+- uploaded a pic for the app homepage
+- installed hapi-swagger
+- added tags , description and notes to userApi.find for swagger documention
+- enhanced UserSpec schema to be used for a swagger documentation
+- added userApi.find.response and this gives us models on swagger documentation
+- created logger.js and added validationError function
+- imported validationError into user-api.js
+- created IdSpec , which specifies Ids 
+- added a validation for input of user APIs create and findOne.

@@ -61,4 +61,6 @@ version 0.7.0
 version 0.8.0
 - updated church-api-test.js to include the body of the tests.
 - updated church-api.js to include more actions 
--
+- installed inert to manage static images
+- installed hapi-swagger 
+- created swagger documentation for userAPIs 

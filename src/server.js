@@ -1,9 +1,18 @@
 import Hapi from "@hapi/hapi";
 import Vision from "@hapi/vision";
 import Cookie from "@hapi/cookie"; // for use with the cookies
+import Inert from "@hapi/inert"; // for use with inert for static images
 import Handlebars from "handlebars";
 import dotenv from "dotenv";
 import Joi from "joi";
+import HapiSwagger from "hapi-swagger";
+
+const swaggerOptions = {
+  info: {
+    title: "ChurchViews API",
+    version: "0.1",
+  },
+};
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -28,6 +37,16 @@ async function init() {
   });
   await server.register(Vision);
   await server.register(Cookie);
+  await server.register(Inert);
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
+
   server.validator(Joi); // includes joi 
 
   server.views({

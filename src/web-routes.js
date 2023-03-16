@@ -23,5 +23,9 @@ export const webRoutes = [
   // denomination controllers
   {method:"GET", path:"/denomination/{id}", config:denominationController.index},
   {method:"POST", path:"/denomination/{id}/addchurch", config:denominationController.addChurch},
-  { method: "GET", path: "/denomination/{id}/deletechurch/{churchid}", config: denominationController.deleteChurch }
+  { method: "GET", path: "/denomination/{id}/deletechurch/{churchid}", config: denominationController.deleteChurch },
+
+  // assets 
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
+
 ];
