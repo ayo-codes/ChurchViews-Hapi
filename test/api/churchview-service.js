@@ -26,4 +26,29 @@ export const churchviewService = {
     return res.data;
   },
 
+  async createDenomination(denomination) {
+    const res = await axios.post(`${this.churchviewUrl}/api/denominations`, denomination);
+    return res.data;
+  },
+
+  async deleteAllDenominations() {
+    const response = await axios.delete(`${this.churchviewUrl}/api/denominations`);
+    return response.data;
+  },
+
+  async deleteDenomination(id) {
+    const response = await axios.delete(`${this.churchviewUrl}/api/denominations/${id}`);
+    return response;
+  },
+
+  async getAllDenominations() {
+    const res = await axios.get(`${this.churchviewUrl}/api/denominations`);
+    return res.data;
+  },
+
+  async getDenomination(id) {
+    const res = await axios.get(`${this.churchviewUrl}/api/denominations/${id}`);
+    return res.data;
+  },
 };
+

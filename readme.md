@@ -52,3 +52,8 @@ version 0.6.0
 - created a set of tests for the church models
 - Refactored test folder and created user-api-test.js and playtime-service.js
 - added more tests for user-apis.
+
+version 0.7.0 
+- created denomination-api-tests.js and denomination-api.js
+- updated api-routes to reflect denomination routes
+- created the skeleton for church-api-test.js and church-api.js 

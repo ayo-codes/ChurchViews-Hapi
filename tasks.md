@@ -125,3 +125,18 @@ version 0.6.0
 - included serviceUrl in fixtures.js
 - added more data to churchview-service and user-api-test.js
 
+version 0.7.0
+- created denomination-api.js and it's skeleton
+- added denomination routes to api-routes
+- updated churchview-service.js to include denomination actions
+- created skeleton of denomination-api-test.js
+- created 'create denomination' test in denomination-api-test.js
+- created 'create' in denomination-api.js , then tested it 
+- created 'delete a denomination' test on denomination-api-test.js
+- created a 'deleteOne' in denomination-api.js
+- created a 'findOne' in denomination-api.js
+- created 'create multiple denominations' and 'remove non-existant denomination' tests
+- created a 'find' in denomination-api.js
+- created church-api.js skeleton
+- added church routes to api-routes
+- created church-api-test.js skeleton
