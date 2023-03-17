@@ -180,3 +180,11 @@ version 0.9.0
 
 version 0.9.1
 - moved database to mongo cloud atlas
+
+version 0.10.0
+- added swagger response options to authenticate method 
+- created a joi-schema JwtAuth and included it as the response schema in the authenticate endpoint.
+- added UserCrednetialSpec to the validate option in user-api.js
+- created a new fixture called maggieCredentials which just has email and password to be used with the authenticate calls
+- changed all authenticate calls in tests to be maggieCredentials from maggie.
+- added additional parameters (securityDefinitions) to swaggerOptions on in server.js, this allows a new button to appear on the documentation site to allow for authentication

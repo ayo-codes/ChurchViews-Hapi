@@ -2,7 +2,7 @@ import { EventEmitter } from "events";
 import { assert } from "chai";
 import { churchviewService } from "./churchview-service.js";
 import { assertSubset } from "../test-utils.js";
-import { maggie , anglican, testDenominations } from "../fixtures.js";
+import { maggie , anglican, testDenominations ,maggieCredentials} from "../fixtures.js";
 
 EventEmitter.setMaxListeners(25);
 
@@ -13,12 +13,12 @@ suite("Denomination API tests", () => {
   setup(async () => {
     churchviewService.clearAuth();
     user = await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     await churchviewService.deleteAllDenominations();
     await churchviewService.deleteAllUsers();
     user = await churchviewService.createUser(maggie);
     // triggers a new bearer token 
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     anglican.userid = user._id;
   });
 

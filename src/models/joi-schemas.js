@@ -57,3 +57,11 @@ export const DenominationSpecPlus = DenominationSpec.keys({
 }).label("DenominationPlus");
 
 export const DenominationArraySpec = Joi.array().items(DenominationSpecPlus).label("DenominationArray");
+
+// for authentication 
+export const JwtAuth = Joi.object()
+  .keys({
+    success: Joi.boolean().example("true").required(),
+    token: Joi.string().example("eyJhbGciOiJND.g5YmJisIjoiaGYwNTNjAOhE.gCWGmY5-YigQw0DCBo").required(),
+  })
+  .label("JwtAuth");

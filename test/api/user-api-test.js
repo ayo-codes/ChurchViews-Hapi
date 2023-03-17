@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { churchviewService } from "./churchview-service.js";
 import { assertSubset } from "../test-utils.js";
-import { maggie, testUsers } from "../fixtures.js";
+import { maggie, testUsers , maggieCredentials } from "../fixtures.js";
 import { db } from "../../src/models/db.js";
 
 const users = new Array(testUsers.length);
@@ -10,14 +10,14 @@ suite("User API tests", () => {
   setup(async () => {
     churchviewService.clearAuth();
     await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     await churchviewService.deleteAllUsers();
     for (let i = 0; i < testUsers.length; i += 1) {
       // eslint-disable-next-line no-await-in-loop
       users[0] = await churchviewService.createUser(testUsers[i]);
     }
     await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
   });
   teardown(async () => {
   });
@@ -33,7 +33,7 @@ suite("User API tests", () => {
     assert.equal(returnedUsers.length, 4);
     await churchviewService.deleteAllUsers();
     await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     returnedUsers = await churchviewService.getAllUsers();
     assert.equal(returnedUsers.length, 1);
   });
@@ -56,7 +56,7 @@ suite("User API tests", () => {
   test("get a user - deleted user", async () => {
     await churchviewService.deleteAllUsers();
     await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     try {
       const returnedUser = await churchviewService.getUser(users[0]._id);
       assert.fail("Should not return a response");

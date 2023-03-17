@@ -74,3 +74,7 @@ version 0.9.0
 
 version 0.9.1
 - moved models to mongo cloud atlas.
+
+version 0.10.0
+- added swagger response and validation parameters(for input) to authenticate routes
+- swagger authentication for documentation page

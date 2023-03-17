@@ -1,26 +1,26 @@
 import { assert } from "chai";
 import { churchviewService } from "./churchview-service.js";
 import { decodeToken } from "../../src/api/jwt-utils.js";
-import { maggie } from "../fixtures.js";
+import { maggie, maggieCredentials } from "../fixtures.js";
 
 suite("Authentication API tests", async () => {
   setup(async () => {
     churchviewService.clearAuth();
     await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     await churchviewService.deleteAllUsers();
   });
 
   test("authenticate", async () => {
     const returnedUser = await churchviewService.createUser(maggie);
-    const response = await churchviewService.authenticate(maggie);
+    const response = await churchviewService.authenticate(maggieCredentials);
     assert(response.success);
     assert.isDefined(response.token);
   });
 
   test("verify Token", async () => {
     const returnedUser = await churchviewService.createUser(maggie);
-    const response = await churchviewService.authenticate(maggie);
+    const response = await churchviewService.authenticate(maggieCredentials);
 
     const userInfo = decodeToken(response.token);
     assert.equal(userInfo.email, returnedUser.email);

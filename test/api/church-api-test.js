@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { churchviewService } from "./churchview-service.js";
-import { maggie, anglican, testDenominations, testChurches, whitefriar } from "../fixtures.js";
+import { maggie, anglican, testDenominations, testChurches, whitefriar, maggieCredentials } from "../fixtures.js";
 
 suite("Church API tests", () => {
   let user = null;
@@ -10,12 +10,12 @@ suite("Church API tests", () => {
   setup(async () => {
     churchviewService.clearAuth();
     user = await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     await churchviewService.deleteAllDenominations();
     await churchviewService.deleteAllChurches();
     await churchviewService.deleteAllUsers();
     user = await churchviewService.createUser(maggie);
-    await churchviewService.authenticate(maggie);
+    await churchviewService.authenticate(maggieCredentials);
     anglican.userid = user._id;
     sampleDenomination = await churchviewService.createDenomination(anglican);
   });
