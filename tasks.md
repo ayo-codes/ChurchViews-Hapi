@@ -205,3 +205,4 @@ version 0.10.2
 - added models/image-store.js file 
 - added web-routes to upload image 
 - added uploadImage method to the denomination-controller which helps upload image to cloudinary
+- changed project name to ChurchViews
