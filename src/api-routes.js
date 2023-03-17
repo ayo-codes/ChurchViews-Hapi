@@ -22,4 +22,6 @@ export const apiRoutes = [
   { method: "DELETE", path: "/api/churches", config: churchApi.deleteAll },
   { method: "DELETE", path: "/api/churches/{id}", config: churchApi.deleteOne },
 
+  { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
+
 ];

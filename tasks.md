@@ -164,3 +164,13 @@ version 0.9.0
 - updated the Church Schema, and separated them out into ChurchSpec and ChurchSpecPlus.
 - updated the church-api.js with swagger options
 - updated the Denomination Schema and separated them out into DenominationSpec and DenominationSpecPlus
+- installed hapi-auth-jwt2 and jsonwebtoken
+- created jwt-utis.js which is used to encode, decode and validate tokens.
+- import jwt and validate into server.js
+- registered jwt plugin in server.js
+- added a new authentication strategy for jwt
+- added authenticate route to api-routes.js 
+- imported createToken into user-api.js and also added authenticate method to userApi.
+- added authenticate(user) and clearAuth() to churchview-service.js
+- introduced new tests to test the authentication of the apis , auth-api-test.js
+- changed auth strategy for denomination and churches 
