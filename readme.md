@@ -71,3 +71,6 @@ version 0.9.0
 - updated denomination Schema and added swagger options to denomination-api
 - added authentication for APIs ( Denomination, Church and User)
 - added tests for authentication-api
+
+version 0.9.1
+- moved models to mongo cloud atlas.

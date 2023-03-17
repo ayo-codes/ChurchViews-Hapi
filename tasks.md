@@ -177,3 +177,6 @@ version 0.9.0
 - changed the setup of the tests for denomination and church , to allow for authentication
 - changed auth strategy for users 
 - changed the user-api-tests to allow for authentications
+
+version 0.9.1
+- moved database to mongo cloud atlas
