@@ -8,10 +8,14 @@ suite("Church API tests", () => {
   let sampleDenomination = null;
 
   setup(async () => {
-    await churchviewService.deleteAllDenominations();
-    await churchviewService.deleteAllUsers();
-    await churchviewService.deleteAllChurches();
+    churchviewService.clearAuth();
     user = await churchviewService.createUser(maggie);
+    await churchviewService.authenticate(maggie);
+    await churchviewService.deleteAllDenominations();
+    await churchviewService.deleteAllChurches();
+    await churchviewService.deleteAllUsers();
+    user = await churchviewService.createUser(maggie);
+    await churchviewService.authenticate(maggie);
     anglican.userid = user._id;
     sampleDenomination = await churchviewService.createDenomination(anglican);
   });

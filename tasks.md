@@ -173,4 +173,5 @@ version 0.9.0
 - imported createToken into user-api.js and also added authenticate method to userApi.
 - added authenticate(user) and clearAuth() to churchview-service.js
 - introduced new tests to test the authentication of the apis , auth-api-test.js
-- changed auth strategy for denomination and churches 
+- changed auth strategy for denomination and church 
+- changed the setup of the tests for denomination and church , to allow for authentication

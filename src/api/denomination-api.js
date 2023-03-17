@@ -6,7 +6,9 @@ import { IdSpec, DenominationArraySpec, DenominationSpec, DenominationSpecPlus }
 
 export const denominationApi = {
   find: {
-    auth: false,
+        auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const denominations = await db.denominationStore.getAllDenominations();
@@ -23,7 +25,9 @@ export const denominationApi = {
 
 
   findOne: {
-    auth: false,
+        auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const denomination = await db.denominationStore.getDenominationById(request.params.id);
@@ -43,7 +47,9 @@ export const denominationApi = {
   },
 
   create: {
-    auth: false,
+        auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const denomination = request.payload;
@@ -64,7 +70,9 @@ export const denominationApi = {
   },
 
   deleteOne: {
-    auth: false,
+        auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const denomination = await db.denominationStore.getDenominationById(request.params.id);
@@ -84,7 +92,9 @@ export const denominationApi = {
 
 
   deleteAll: {
-    auth: false,
+        auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.denominationStore.deleteAllDenominations();

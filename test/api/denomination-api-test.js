@@ -11,9 +11,14 @@ suite("Denomination API tests", () => {
   let user = null;
 
   setup(async () => {
+    churchviewService.clearAuth();
+    user = await churchviewService.createUser(maggie);
+    await churchviewService.authenticate(maggie);
     await churchviewService.deleteAllDenominations();
     await churchviewService.deleteAllUsers();
     user = await churchviewService.createUser(maggie);
+    // triggers a new bearer token 
+    await churchviewService.authenticate(maggie);
     anglican.userid = user._id;
   });
 

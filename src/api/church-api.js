@@ -5,7 +5,9 @@ import { validationError } from "./logger.js";
 
 export const churchApi = {
   find: {
-    auth: false,
+       auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const churches = await db.churchStore.getAllChurches();
@@ -21,7 +23,9 @@ export const churchApi = {
   },
 
   findOne: {
-    auth: false,
+       auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const church = await db.churchStore.getChurchById(request.params.id);
@@ -41,7 +45,9 @@ export const churchApi = {
   },
 
   create: {
-    auth: false,
+       auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const church = await db.churchStore.addChurch(request.params.id, request.payload);
@@ -61,7 +67,9 @@ export const churchApi = {
   },
 
   deleteAll: {
-    auth: false,
+       auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.churchStore.deleteAllChurches();
@@ -75,7 +83,9 @@ export const churchApi = {
   },
 
   deleteOne: {
-    auth: false,
+       auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const church = await db.churchStore.getChurchById(request.params.id);
