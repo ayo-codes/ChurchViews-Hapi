@@ -175,3 +175,5 @@ version 0.9.0
 - introduced new tests to test the authentication of the apis , auth-api-test.js
 - changed auth strategy for denomination and church 
 - changed the setup of the tests for denomination and church , to allow for authentication
+- changed auth strategy for users 
+- changed the user-api-tests to allow for authentications

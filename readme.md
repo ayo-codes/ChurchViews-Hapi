@@ -69,4 +69,5 @@ version 0.9.0
 - updated User Schema and improved user-tests. 
 - updated church Schema and added swagger options to church-api
 - updated denomination Schema and added swagger options to denomination-api
-- added authentication for APIs
+- added authentication for APIs ( Denomination, Church and User)
+- added tests for authentication-api
