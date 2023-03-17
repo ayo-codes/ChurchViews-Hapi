@@ -188,3 +188,9 @@ version 0.10.0
 - created a new fixture called maggieCredentials which just has email and password to be used with the authenticate calls
 - changed all authenticate calls in tests to be maggieCredentials from maggie.
 - added additional parameters (securityDefinitions) to swaggerOptions on in server.js, this allows a new button to appear on the documentation site to allow for authentication
+
+version 0.10.1
+- installed moongose seeder utility
+- created seed-data.js to hold seed-data.
+- added a seedData object with sample users, a sample denomination and a sample church
+- added a reference between objects using e.g userid: "-> users.bart" to link the id of bart to the userid required for another object.

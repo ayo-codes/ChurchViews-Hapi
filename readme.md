@@ -78,3 +78,6 @@ version 0.9.1
 version 0.10.0
 - added swagger response and validation parameters(for input) to authenticate routes
 - swagger authentication for documentation page
+
+version 0.10.1 
+- added mongoose seedling of sample user data
