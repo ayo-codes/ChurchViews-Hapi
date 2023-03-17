@@ -81,3 +81,6 @@ version 0.10.0
 
 version 0.10.1 
 - added mongoose seedling of sample user data
+
+version 0.10.2 
+- added cloudinary to store image uploads 
