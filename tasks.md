@@ -206,3 +206,6 @@ version 0.10.2
 - added web-routes to upload image 
 - added uploadImage method to the denomination-controller which helps upload image to cloudinary
 - changed project name to ChurchViews
+
+version 0.10.3 
+- UI Improvements
