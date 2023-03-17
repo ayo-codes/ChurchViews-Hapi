@@ -1,5 +1,6 @@
 import { db } from "../models/db.js";
 import { ChurchSpec } from "../models/joi-schemas.js";
+import { imageStore } from "../models/image-store.js";
 
 export const denominationController = {
   index: {
@@ -39,6 +40,30 @@ export const denominationController = {
       const denomination = await db.denominationStore.getDenominationById(request.params.id);
       await db.churchStore.deleteChurch(request.params.churchid);
       return h.redirect(`/denomination/${denomination._id}`);
+    },
+  },
+
+  uploadImage: {
+    handler: async function (request, h) {
+      try {
+        const denomination = await db.denominationStore.getDenominationById(request.params.id);
+        const file = request.payload.imagefile;
+        if (Object.keys(file).length > 0) {
+          const url = await imageStore.uploadImage(request.payload.imagefile);
+          denomination.img = url;
+          await db.denominationStore.updateDenomination(denomination);
+        }
+        return h.redirect(`/denomination/${denomination._id}`);
+      } catch (err) {
+        console.log(err);
+        return h.redirect(`/denomination/${denomination._id}`);
+      }
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
     },
   },
 

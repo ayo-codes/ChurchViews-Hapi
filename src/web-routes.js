@@ -26,6 +26,10 @@ export const webRoutes = [
   { method: "GET", path: "/denomination/{id}/deletechurch/{churchid}", config: denominationController.deleteChurch },
 
   // assets 
-  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } }
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
+
+  // images 
+  { method: "POST", path: "/denomination/{id}/uploadimage", config: denominationController.uploadImage }
+
 
 ];

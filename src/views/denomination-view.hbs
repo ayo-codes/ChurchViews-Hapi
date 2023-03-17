@@ -1,9 +1,27 @@
 {{> menu}}
 
-<section class="section">
-  <div class ="title">
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered"
+    <div class ="title">
     {{denomination.title}}
   </div>
+  </div>
+  <div class = "column">
   {{> list-churches}} {{! import list-churches partials }}
   {{> add-church}} {{! import add-church partials }}
+ </div>
+ <div class ="column">
+  {{> denomination-image }}
+ </div>
 </section>
+
+
+ <script>
+  const fileInput = document.querySelector(".file-input");
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector(".file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  };
+</script>

@@ -194,3 +194,14 @@ version 0.10.1
 - created seed-data.js to hold seed-data.
 - added a seedData object with sample users, a sample denomination and a sample church
 - added a reference between objects using e.g userid: "-> users.bart" to link the id of bart to the userid required for another object.
+
+version 0.10.2
+- included cloudinary details in .env files
+- created a new partial view for the images on the denomination page called denomination-image.hbs
+- modified the denomination-view.hbs to include the partial and and switch it to columns 
+- included img in denominationSchema in denomination.js
+- updated denomination-mongo-store.js to include updateDenomination method
+- installed cloudinary 
+- added models/image-store.js file 
+- added web-routes to upload image 
+- added uploadImage method to the denomination-controller which helps upload image to cloudinary
