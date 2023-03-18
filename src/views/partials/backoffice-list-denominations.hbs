@@ -1,0 +1,21 @@
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Denomination Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each denominations}}
+      <tr>
+        <td>
+          {{title}}
+        </td>
+        <td>
+          <a href="/denomination/{{../denomination._id}}/deletechurch/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+      </tr>
+      {{/each}}
+  </tbody>
+</table>

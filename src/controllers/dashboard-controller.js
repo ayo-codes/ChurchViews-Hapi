@@ -7,7 +7,7 @@ export const dashboardController = {
       const loggedInUser = request.auth.credentials;
       const denominations = await db.denominationStore.getUserDenominations(loggedInUser._id);
       const viewData = {
-        title: "Churches Dashboard",
+        title: "ChurchViews Dashboard",
         user: loggedInUser,
         denominations: denominations,
       };
