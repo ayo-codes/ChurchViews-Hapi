@@ -1,0 +1,22 @@
+{{> menu}}
+
+<form class="box" action="/church/{{denomination._id}}/updatechurch/{{church._id}}" method="POST">
+  <label>Update Church Details:</label>
+  <div class="field is-horizontal"> 
+    <div class="field-body">
+      <div class="field">
+        <input class="input" type="text" placeholder="Enter Church Name" name="name" value="{{church.name}}">
+      </div>
+      <div class="field">
+        <input class="input" placeholder="Enter Description" name="description" value="{{church.description}}">
+      </div>
+      <div class="field">
+        <input class="input" type="number" step="any" placeholder="Enter Latitude" name="latitude" value="{{church.latitude}}">
+      </div>
+      <div class="field">
+        <input class="input" type="number" step="any" placeholder="Enter Longitude" name="longitude" value="{{church.longitude}}">
+      </div>
+    </div>
+   </div>
+  <button class="button is-primary">Update Church</button>
+</form>

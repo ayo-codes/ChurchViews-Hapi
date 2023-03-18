@@ -4,6 +4,7 @@ import { aboutController } from "./controllers/about-controller.js";
 import { denominationController } from "./controllers/denomination-controller.js";
 import { profileController } from "./controllers/profile-controller.js";
 import { backofficeController } from "./controllers/backoffice-controller.js";
+import { churchController } from "./controllers/church-controller.js";
 
 export const webRoutes = [
   // accounts controllers
@@ -27,6 +28,10 @@ export const webRoutes = [
 
   // backoffice controllers
   {method:"GET", path:"/backoffice", config:backofficeController.index},
+
+  // church controllers
+  {method:"GET", path:"/church/{id}/editchurch/{churchid}", config:churchController.index},
+  {method:"POST", path:"/church/{id}/updatechurch/{churchid}", config:churchController.updateChurch},
 
   // denomination controllers
   {method:"GET", path:"/denomination/{id}", config:denominationController.index},
