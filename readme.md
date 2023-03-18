@@ -84,3 +84,9 @@ version 0.10.1
 
 version 0.10.2 
 - added cloudinary to store image uploads 
+
+version 0.10.3
+- updated icon and added a hyperlink to the homepage for it
+- added a footer
+- added a profile page to view the logged-in user's details
+- added a backoffice page to view data all the data from the app

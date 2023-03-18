@@ -2,6 +2,8 @@ import { accountsController } from "./controllers/accounts-controller.js";
 import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { denominationController } from "./controllers/denomination-controller.js";
+import { profileController } from "./controllers/profile-controller.js";
+import { backofficeController } from "./controllers/backoffice-controller.js";
 
 export const webRoutes = [
   // accounts controllers
@@ -19,6 +21,12 @@ export const webRoutes = [
 
   // about controllers
   {method:"GET", path:"/about", config: aboutController.index},
+
+  // profile controllers
+  {method:"GET", path:"/profile", config:profileController.index},
+
+  // backoffice controllers
+  {method:"GET", path:"/backoffice", config:backofficeController.index},
 
   // denomination controllers
   {method:"GET", path:"/denomination/{id}", config:denominationController.index},

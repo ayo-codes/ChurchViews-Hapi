@@ -209,3 +209,17 @@ version 0.10.2
 
 version 0.10.3 
 - UI Improvements
+- updated icon and linked it to homepage
+- added a footer
+- created a footer partial and included it in the layout page
+- created a link to 'profile' on the menu bar
+- created and added it to the webroutes
+- created a new controller profile-controller.js
+- created a new partial called profile-info
+- created a new view called profile-view
+- added a profile page to display the logged-in user details
+- created a link to 'backoffice' on the menu bar
+- created and added it to the webroutes
+- created a new controller backoffice-controller.js
+- created 3 new partials , backoffice-list-users, backoffice-list-churches, backoffice-list-denominations
+- included the partials in a new view called backoffice-view
