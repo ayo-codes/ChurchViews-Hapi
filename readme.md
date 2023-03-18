@@ -90,3 +90,6 @@ version 0.10.3
 - added a footer
 - added a profile page to view the logged-in user's details
 - added a backoffice page to view data all the data from the app
+
+version 0.10.4
+- added an edit church feature, to enable the signed in user to edit the details of church

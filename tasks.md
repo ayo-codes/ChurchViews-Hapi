@@ -223,3 +223,10 @@ version 0.10.3
 - created a new controller backoffice-controller.js
 - created 3 new partials , backoffice-list-users, backoffice-list-churches, backoffice-list-denominations
 - included the partials in a new view called backoffice-view
+
+version 0.10.4
+- created a new church-view.hbs to allow us to view church we would like to edit 
+- new church-view.hbs includes a form and link to update the church
+- modified the church-list.hbs to include an edit button.
+- created a new controller called church-controller.js which had two methods index which loads the church-view page and updateChurch which updates the modified data in the form and sends it to the Model
+- created two new routes 1-to edit the church and 2-to update the church 
