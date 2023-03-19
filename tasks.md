@@ -241,3 +241,8 @@ version 0.10.5
 version 0.10.6
 - a couple of UI fixes
 - included ability for the backoffice to see the number of users, churches and denominations in the database by creating new db async functions and updating backoffice controllers
+
+version 0.10.7
+- included ability to update the denomination a user has entered. 
+- created a new view denomination-update-view.hbs , denomination-update-controller.js and two new routes 
+- changed controller for backoffice to only let someone with an admin account to view the data.

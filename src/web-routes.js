@@ -6,6 +6,7 @@ import { profileController } from "./controllers/profile-controller.js";
 import { backofficeController } from "./controllers/backoffice-controller.js";
 import { churchController } from "./controllers/church-controller.js";
 import { userController } from "./controllers/user-controller.js";
+import { denominationUpdateController } from "./controllers/denomination-update-controller.js";
 
 export const webRoutes = [
   // accounts controllers
@@ -42,6 +43,10 @@ export const webRoutes = [
   {method:"GET", path:"/denomination/{id}", config:denominationController.index},
   {method:"POST", path:"/denomination/{id}/addchurch", config:denominationController.addChurch},
   { method: "GET", path: "/denomination/{id}/deletechurch/{churchid}", config: denominationController.deleteChurch },
+
+  // denomination-update-controllers
+  {method:"GET", path:"/denomination/{id}/editdenomination", config: denominationUpdateController.index},
+  {method:"POST", path:"/denomination/{id}/updatedenomination", config: denominationUpdateController.updateDenomination},
 
   // assets 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },

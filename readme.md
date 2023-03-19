@@ -96,3 +96,10 @@ version 0.10.4
 
 version 0.10.5 
 - added an edit user feature to enable the signed in user to edit their details
+
+version 0.10.6
+- added the ability to get user statistics
+
+version 0.10.7
+- denomination update
+- backoffice can now only be accessed by admins

@@ -1,0 +1,10 @@
+{{> menu}}
+<div class ="title has-text-centered">
+  <p class=" my-6">Edit Denomination</p>
+</div>
+<form action="/denomination/{{denomination._id}}/updatedenomination" method="POST">
+  <div class="field">
+    <label class="label">Name of Denomination</label> <input class="input" type="text" placeholder="Enter denomination type" name="title" value="{{denomination.title}}">
+  </div>
+  <button class="button is-link">Update Denomination</button>
+</form>

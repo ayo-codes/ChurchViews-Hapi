@@ -20,7 +20,10 @@ export const backofficeController = {
         numberOfDenominations : numberOfDenominations,
         numberOfUsers : numberOfUsers,
       };
-      return h.view("backoffice-view", viewData);
+      if (loggedInUser.email === "bart@simpson.com") {
+        return h.view("backoffice-view", viewData);
+      } 
+        return h.redirect("/dashboard")    
     },
   },
 };

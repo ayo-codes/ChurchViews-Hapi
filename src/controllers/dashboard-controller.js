@@ -42,9 +42,5 @@ export const dashboardController = {
     },
   },
 
-  editDenomination:{
-    handler: async function (request, h){
-    }
-  }
 
 };

@@ -41,11 +41,12 @@ export const denominationMongoStore = {
     await Denomination.deleteMany({});
   },
 
-  async updateDenomination(updatedDenomination) {
-    const denomination = await Denomination.findOne({ _id: updatedDenomination._id });
-    denomination.title = updatedDenomination.title;
-    denomination.img = updatedDenomination.img;
-    await denomination.save();
+  async updateDenomination(denomination, updatedDenomination) {
+    const denominationed = await Denomination.findOne({ _id: denomination._id });
+    denominationed.title = updatedDenomination.title;
+    denominationed.img = updatedDenomination.img;
+    await denominationed.save();
+
   },    
   async numberOfDenominations(){
     const numOfDenominations = await Denomination.count();
