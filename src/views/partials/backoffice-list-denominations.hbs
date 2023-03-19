@@ -1,7 +1,12 @@
+<div class="my-6 subtitle has-text-centered">
+  <p>List of Denominations on ChurchViews</p>
+  <p>Number of Denominations Currently on the app: {{numberOfDenominations}}</p> 
+</div>
 <table class="table is-fullwidth">
   <thead>
     <tr>
       <th>Denomination Name</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -10,7 +15,7 @@
         <td>
           {{title}}
         </td>
-        <td>
+                <td>
           <a href="/denomination/{{../denomination._id}}/deletechurch/{{_id}}" class="ui icon button">
             <i class="fas fa-trash"></i>
           </a>

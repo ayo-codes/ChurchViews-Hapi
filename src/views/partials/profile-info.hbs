@@ -1,9 +1,14 @@
-<table class="table is-fullwidth">
+<div class ="title has-text-centered">
+  <p class=" my-6">Your Profile Page</p>
+</div>
+<table class="my-6 table is-fullwidth">
   <thead>
     <tr>
       <th>Firstname</th>
       <th>Surname</th>
       <th>Email</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -19,15 +24,16 @@
       </td>
       <td>
     <a href="/user/{{user._id}}/edituser" class="ui icon button">
-        <i class="pencil alternate icon"></i>
+        <i class="fas fa-edit"></i>
       </a>
       </td>
-  
-      <td>
-        <a href="/denomination/{{../denomination._id}}/deletechurch/{{_id}}" class="ui icon button">
+  <td>
+    
+        <a href="/user/{{user._id}}/deleteuser" class="ui icon button">
           <i class="fas fa-trash"></i>
         </a>
       </td>
     </tr>
   </tbody>
 </table>
+

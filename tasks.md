@@ -236,4 +236,8 @@ version 0.10.5
 - added a new edit button to the profile-view.hbs to allow for editing of user-info
 - created a new controller called user-controller to control the user-update-view.hbs
 - created two new routes 1- to edit the user and 2-to update the church
-updated the user-mongo-store to include an updateUser method
+- updated the user-mongo-store to include an updateUser method
+
+version 0.10.6
+- a couple of UI fixes
+- included ability for the backoffice to see the number of users, churches and denominations in the database by creating new db async functions and updating backoffice controllers

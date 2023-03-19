@@ -46,4 +46,8 @@ export const userMongoStore = {
     userDoc.password = updatedUser.password;
     await userDoc.save();
   },
+  async numberOfUsers(){
+    const numOfUsers = await User.count();
+    return numOfUsers;
+  }
 };

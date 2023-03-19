@@ -47,5 +47,8 @@ export const denominationMongoStore = {
     denomination.img = updatedDenomination.img;
     await denomination.save();
   },    
-
+  async numberOfDenominations(){
+    const numOfDenominations = await Denomination.count();
+    return numOfDenominations;
+  }
 };

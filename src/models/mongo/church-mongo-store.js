@@ -46,4 +46,10 @@ export const churchMongoStore = {
     churchDoc.longitude = updatedChurch.longitude;
     await churchDoc.save();
   },
+
+  async numberOfChurches(){
+    const numOfChurches = await Church.count();
+    return numOfChurches;
+  }
+  
 };
