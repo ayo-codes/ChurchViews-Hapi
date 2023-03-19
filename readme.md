@@ -1,3 +1,7 @@
+About the ChurchViews
+This is a Node.Js using Hapi.js to create a web App and also web APIs for ChurchViews. It is hosted on https://churchviews.onrender.com ChurchViews allows users to sign up and save information about beautiful places of worship they come across. Users can save the places with the name, a brief description as well as location information stored as latitude and longitude. Users can categorise the churches by denomination. Users can also modify or delete their entries of churches and denominations. An admin user can also view all the users/ churches and denominations, users have entered into the app.
+The data stored in the app is available via apis and documentation for that can be found on https://churchviews.onrender.com/documentation. 
+
 version 0.1.0 features
 - installed code quality tools: Eslint and Prettier
 - installed Hapi 
