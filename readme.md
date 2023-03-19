@@ -93,3 +93,6 @@ version 0.10.3
 
 version 0.10.4
 - added an edit church feature, to enable the signed in user to edit the details of church
+
+version 0.10.5 
+- added an edit user feature to enable the signed in user to edit their details
