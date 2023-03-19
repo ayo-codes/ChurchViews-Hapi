@@ -7,21 +7,27 @@
     </tr>
   </thead>
   <tbody>
-      <tr>
-        <td>
-          {{user.firstName}}
-        </td>
-        <td>
-          {{user.lastName}}
-        </td>
-        <td>
-          {{user.email}}
-        </td>
-        <td>
-          <a href="/denomination/{{../denomination._id}}/deletechurch/{{_id}}" class="ui icon button">
-            <i class="fas fa-trash"></i>
-          </a>
-        </td>
-      </tr>
+    <tr>
+      <td>
+        {{user.firstName}}
+      </td>
+      <td>
+        {{user.lastName}}
+      </td>
+      <td>
+        {{user.email}}
+      </td>
+      <td>
+    <a href="/user/{{user._id}}/edituser" class="ui icon button">
+        <i class="pencil alternate icon"></i>
+      </a>
+      </td>
+  
+      <td>
+        <a href="/denomination/{{../denomination._id}}/deletechurch/{{_id}}" class="ui icon button">
+          <i class="fas fa-trash"></i>
+        </a>
+      </td>
+    </tr>
   </tbody>
 </table>

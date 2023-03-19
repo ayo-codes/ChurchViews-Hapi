@@ -230,3 +230,10 @@ version 0.10.4
 - modified the church-list.hbs to include an edit button.
 - created a new controller called church-controller.js which had two methods index which loads the church-view page and updateChurch which updates the modified data in the form and sends it to the Model
 - created two new routes 1-to edit the church and 2-to update the church 
+
+version 0.10.5
+- created a new user-update-view.hbs with a form, which will be used to edit user details 
+- added a new edit button to the profile-view.hbs to allow for editing of user-info
+- created a new controller called user-controller to control the user-update-view.hbs
+- created two new routes 1- to edit the user and 2-to update the church
+updated the user-mongo-store to include an updateUser method
