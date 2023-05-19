@@ -5,11 +5,12 @@ import Inert from "@hapi/inert"; // for use with inert for static images
 import Handlebars from "handlebars";
 import dotenv from "dotenv";
 import jwt from "hapi-auth-jwt2";
-import { validate } from "./api/jwt-utils.js";
+
 import Joi from "joi";
 import HapiSwagger from "hapi-swagger";
 import path from "path";
 import { fileURLToPath } from "url";
+import { validate } from "./api/jwt-utils.js";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js"; // for use with authentication

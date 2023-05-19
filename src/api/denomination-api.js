@@ -17,10 +17,10 @@ export const denominationApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
-    response: { schema: DenominationArraySpec, failAction: validationError },
-    description: "Get all denominations",
-    notes: "Returns all denominations",
+    // tags: ["api"],
+    // response: { schema: DenominationArraySpec, failAction: validationError },
+    // description: "Get all denominations",
+    // notes: "Returns all denominations",
   },
 
 
@@ -39,11 +39,11 @@ export const denominationApi = {
         return Boom.serverUnavailable("No Denomination with this id");
       }
     },
-    tags: ["api"],
-    description: "Find a Denomination",
-    notes: "Returns a denomination",
-    validate: { params: { id: IdSpec }, failAction: validationError },
-    response: { schema: DenominationSpecPlus, failAction: validationError },
+    // tags: ["api"],
+    // description: "Find a Denomination",
+    // notes: "Returns a denomination",
+    // validate: { params: { id: IdSpec }, failAction: validationError },
+    // response: { schema: DenominationSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -62,11 +62,11 @@ export const denominationApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
-    description: "Create a Denomination",
-    notes: "Returns the newly created denomination",
-    validate: { payload: DenominationSpec, failAction: validationError },
-    response: { schema: DenominationSpecPlus, failAction: validationError },
+    // tags: ["api"],
+    // description: "Create a Denomination",
+    // notes: "Returns the newly created denomination",
+    // validate: { payload: DenominationSpec, failAction: validationError },
+    // response: { schema: DenominationSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -85,9 +85,9 @@ export const denominationApi = {
         return Boom.serverUnavailable("No Denomination with this id");
       }
     },
-    tags: ["api"],
-    description: "Delete a denomination",
-    validate: { params: { id: IdSpec }, failAction: validationError },
+    // tags: ["api"],
+    // description: "Delete a denomination",
+    // validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
 
@@ -103,8 +103,8 @@ export const denominationApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
-    tags: ["api"],
-    description: "Delete all Denominations via denominationApi",
+    // tags: ["api"],
+    // description: "Delete all Denominations via denominationApi",
   },
 
 };
