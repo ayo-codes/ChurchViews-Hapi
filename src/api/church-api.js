@@ -2,6 +2,7 @@ import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
 import { IdSpec, ChurchSpec , ChurchSpecPlus , ChurchArraySpec } from "../models/joi-schemas.js";
 import { validationError } from "./logger.js";
+import { imageStore } from "../models/image-store.js";
 
 export const churchApi = {
   find: {
@@ -17,7 +18,7 @@ export const churchApi = {
       }
     },
     // tags: ["api"],
-    // response: { schema: ChurchArraySpec, failAction: validationError },
+     response: { schema: ChurchArraySpec, failAction: validationError },
     // description: "Get all churchApi",
     // notes: "Returns all churches in the database via the Api",
   },
@@ -40,8 +41,8 @@ export const churchApi = {
     // tags: ["api"],
     // description: "Find a Church",
     // notes: "Returns a Church",
-    // validate: { params: { id: IdSpec }, failAction: validationError },
-    // response: { schema: ChurchSpecPlus, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: ChurchSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -62,8 +63,8 @@ export const churchApi = {
     // tags: ["api"],
     // description: "Create a church",
     // notes: "Returns the newly created church",
-    // validate: { payload: ChurchSpec },
-    // response: { schema: ChurchSpecPlus, failAction: validationError }
+    validate: { payload: ChurchSpec },
+    response: { schema: ChurchSpecPlus, failAction: validationError }
   },
 
   deleteAll: {
@@ -100,6 +101,68 @@ export const churchApi = {
     },
     // tags: ["api"],
     // description: "Delete a church",
-    // validate: { params: { id: IdSpec }, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
+
+  uploadImage: {
+    auth : {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      try {
+        console.log (request.payload)
+        console.log(request.payload.imagefile)
+        const church = await db.churchStore.getChurchById(request.params.id);
+        const file = request.payload.imagefile;
+
+        console.log(file);
+        
+        if (Object.keys(file).length > 0) {
+        const url = await imageStore.uploadImage(request.payload.imagefile);
+          console.log(url);
+          church.img = url;
+          await db.churchStore.updateIChurch(church);
+        }
+        if (church) {
+          return h.response(church).code(201);
+        }
+        return Boom.badImplementation("error creating or uploading image ");
+      } catch (err) {
+        console.log(err);
+        return Boom.serverUnavailable("Dataase Error");
+      }
+    },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
+    },
+  },
+  deleteImage: {
+    auth : {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      console.log("Image deleting");
+      try {
+        const church = await db.churchStore.getChurchById(request.params.id);
+        const filename = church.img.split("/").pop();
+        const fileid = filename.substring(0, filename.lastIndexOf(".") || filename);
+        console.log (`deleting image ${fileid}`)
+        if (church){
+          await imageStore.deleteImage(fileid);
+          church.img ="";
+          await db.churchStore.updateIChurch(church);
+          return h.response(church).code(201);
+        }
+        return Boom.badImplementation("error creating or uploading image ");
+      } catch (err) {
+        console.log(err);
+        return Boom.serverUnavailable("Dataase Error");
+      }
+    },
+  },
+    
+
 };

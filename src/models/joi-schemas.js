@@ -5,7 +5,7 @@ export const IdSpec = Joi.alternatives().try(Joi.string(), Joi.object()).descrip
 // Schema for Login form
 export const UserCredentialsSpec = Joi.object()
   .keys({
-    email: Joi.string().email().example("homer@simpson.com").required(),
+    email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ["com", "ie"] } }).pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).example("homer@simpson.com").required(),
     password: Joi.string().example("secret").required(),
   })
   .label("UserCredentials");
@@ -31,6 +31,8 @@ export const ChurchSpec = Joi.object().keys ({
   description: Joi.string().required().example("Catholic place of worship built to George Papworth's design in 1827"),
   latitude: Joi.number().allow("").optional().example(53.3174463),
   longitude: Joi.number().allow("").optional().example(-6.2695732),
+  province: Joi.string().allow("").optional().example("leinster"),
+  img: Joi.string().allow("").optional(),
   denominationid: IdSpec,
 }).label("Church");
 

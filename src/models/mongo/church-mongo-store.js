@@ -38,18 +38,31 @@ export const churchMongoStore = {
     await Church.deleteMany({});
   },
 
-  async updateChurch(church, updatedChurch) {
+  async updateChurch(church ,updatedChurch) {
     const churchDoc = await Church.findOne({ _id: church._id });
     churchDoc.name = updatedChurch.name;
     churchDoc.description = updatedChurch.description;
+    churchDoc.province = updatedChurch.province;
     churchDoc.latitude = updatedChurch.latitude;
     churchDoc.longitude = updatedChurch.longitude;
+    churchDoc.img = updatedChurch.img;
     await churchDoc.save();
   },
 
   async numberOfChurches(){
     const numOfChurches = await Church.count();
     return numOfChurches;
-  }
+  },
+
+  async updateIChurch(updatedChurch) {
+    const churchDoc = await Church.findOne({ _id: updatedChurch._id });
+    churchDoc.name = updatedChurch.name;
+    churchDoc.description = updatedChurch.description;
+    churchDoc.province = updatedChurch.province;
+    churchDoc.latitude = updatedChurch.latitude;
+    churchDoc.longitude = updatedChurch.longitude;
+    churchDoc.img = updatedChurch.img;
+    await churchDoc.save();
+  },
   
 };

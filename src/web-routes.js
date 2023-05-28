@@ -52,7 +52,73 @@ export const webRoutes = [
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 
   // images 
-  { method: "POST", path: "/denomination/{id}/uploadimage", config: denominationController.uploadImage }
+  { method: "POST", path: "/denomination/{id}/uploadimage", config: denominationController.uploadImage },
 
+  // 
+
+  {
+    method: "GET",
+    path: "/github-login",
+    config: {
+      auth: "github-oauth",
+      handler: function (request, h) {
+        if (request.auth.isAuthenticated) {
+          request.cookieAuth.set(request.auth.credentials);
+          return (`Hello ${  request.auth.credentials.profile.displayName}`);
+        }
+        return("Not logged in...");
+      }
+    }
+  }, {
+    method: "GET",
+    path: "/github-account",
+    config: {
+      auth: "session",
+      handler: function (request, h) {
+        if (request.auth.isAuthenticated) {
+          return(request.auth.credentials.profile);
+        }
+      }
+    }
+  }, {
+    method: "GET",
+    path: "/github-userinfo",
+    config: {
+      auth: "session",
+      handler: function (request, h) {
+        if (request.auth.isAuthenticated) {
+          return("<h2>From your GitHub profile</h2>"
+          + `<b>User name:</b> ${  request.auth.credentials.profile.username
+           }<br><b>Display name:</b> ${  request.auth.credentials.profile.displayName
+           }<br><b>Email address:</b> ${  request.auth.credentials.profile.email
+           }<br><b>Affiliation:</b> ${  request.auth.credentials.profile.raw.company}`);
+        }
+      }
+    }
+  }, {
+    method: "GET",
+    path: "/github-loggedin",
+    config: {
+      auth: {
+        mode: "optional"
+      },
+      handler: function (request, h) {
+        if (request.auth.isAuthenticated) {
+          return (`Hello ${  request.auth.credentials.profile.displayName}`);
+        }
+        return("Not logged in...");
+      }
+    }
+  }, {
+    method: "GET",
+    path: "/github-logout",
+    config: {
+      auth: false,
+      handler: function (request, h) {
+        request.cookieAuth.clear();
+        return("Logged out now! Note you are just logged out of this app and not GitHub. Going to /login will log you back in again.");
+      }
+    }
+  }
 
 ];

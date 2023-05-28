@@ -1,5 +1,8 @@
+import bcrypt from "bcrypt"; // added
 import { db } from "../models/db.js";
 import { UserSpec, UserCredentialsSpec } from "../models/joi-schemas.js";
+
+const saltRounds = 10; // added
 
 export const accountsController = {
   index: {
@@ -25,6 +28,7 @@ export const accountsController = {
     },
     handler: async function (request, h) {
       const user = request.payload;
+      user.password = await bcrypt.hash(user.password, saltRounds); // Added
       await db.userStore.addUser(user);
       return h.redirect("/");  // modified signup flow does not work as it redirects into previous signup's account
     },
@@ -47,7 +51,8 @@ export const accountsController = {
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
-      if (!user || user.password !== password) {
+      const passwordsMatch = await bcrypt.compare(password, user.password);
+      if (!user || !passwordsMatch) {
         return h.redirect("/");
       }
       request.cookieAuth.set({ id: user._id }); //  set the  cookie when user logs in

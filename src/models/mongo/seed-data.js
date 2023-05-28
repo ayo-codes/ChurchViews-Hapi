@@ -5,19 +5,19 @@ export const seedData = {
       firstName: "Homer",
       lastName: "Simpson",
       email: "homer@simpson.com",
-      password: "secret"
+      password: "$2a$10$GK.qeeaw3gz1x0QXnUmo9ein3wTac5HyA/dIRy2A.x7NDjocpcYRe"
     },
     marge: {
       firstName: "Marge",
       lastName: "Simpson",
       email: "marge@simpson.com",
-      password: "secret"
+      password: "$2a$10$.2Ftjbl6V4dI.zHKkFnhH.I0Bsr7YKg95U5RK8nbtk6Kh6Reo6cmC"
     },
     bart: {
       firstName: "Bart",
       lastName: "Simpson",
       email: "bart@simpson.com",
-      password: "secret"
+      password: "$2a$10$Zy.U9xFYjVmpHGrm3BStZOR1UV9/JVGeRuQOQ3.RNmnA1FmKi/3iK"
     }
   },
   denominations: {
@@ -34,6 +34,7 @@ export const seedData = {
       description: "Anglican church on Mount Street in Dublin",
       latitude: 53.3344043,
       longitude:-6.2748843 ,
+      province: "Leinster",
       denominationid: "->denominations.anglican"
     },
   }

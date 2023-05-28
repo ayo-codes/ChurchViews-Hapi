@@ -18,7 +18,7 @@ export const denominationApi = {
       }
     },
     // tags: ["api"],
-    // response: { schema: DenominationArraySpec, failAction: validationError },
+    response: { schema: DenominationArraySpec, failAction: validationError },
     // description: "Get all denominations",
     // notes: "Returns all denominations",
   },
@@ -42,8 +42,8 @@ export const denominationApi = {
     // tags: ["api"],
     // description: "Find a Denomination",
     // notes: "Returns a denomination",
-    // validate: { params: { id: IdSpec }, failAction: validationError },
-    // response: { schema: DenominationSpecPlus, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: DenominationSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -65,8 +65,8 @@ export const denominationApi = {
     // tags: ["api"],
     // description: "Create a Denomination",
     // notes: "Returns the newly created denomination",
-    // validate: { payload: DenominationSpec, failAction: validationError },
-    // response: { schema: DenominationSpecPlus, failAction: validationError },
+    validate: { payload: DenominationSpec, failAction: validationError },
+    response: { schema: DenominationSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -87,7 +87,7 @@ export const denominationApi = {
     },
     // tags: ["api"],
     // description: "Delete a denomination",
-    // validate: { params: { id: IdSpec }, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
 
@@ -104,7 +104,7 @@ export const denominationApi = {
       }
     },
     // tags: ["api"],
-    // description: "Delete all Denominations via denominationApi",
+    description: "Delete all Denominations via denominationApi",
   },
 
 };

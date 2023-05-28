@@ -246,3 +246,23 @@ version 0.10.7
 - included ability to update the denomination a user has entered. 
 - created a new view denomination-update-view.hbs , denomination-update-controller.js and two new routes 
 - changed controller for backoffice to only let someone with an admin account to view the data.
+
+version 0.11.0
+- removed authentications on api-routes
+- updated the JWT to include a getUserIdFromRequest function
+- updated the server.js file to include cors and commented out the hapiswagger code , updated init() to await init()
+- added id field to the authentication response in the userapi.authenticate method 
+- updated the church infomation to allow for province information
+- added api routes for uploading and deleting images
+- installed Bell , dinsinfect packages 
+- updated server.js to include disinfect and bell server registration , also installed 
+- added github authentication routes to the webroutes
+- imported imageStore in churchApi and included an uploadImage and deleteImage method to facilitate the svelte frontend 
+- modified validation on the denominationApi to allow for it to work
+- updated jwtUtils to allow getting userId from a Request
+- updated userApi to include bcrypt and to also hash passwords when a user signs up and also for authentication 
+- updated accountsCountroller to include bcrypt and to also hash passwords when a user signs up and also for authentication
+- updated joi schema to include regex for emails and also to include the extra fields of province and img
+- updated the updateChurch method in churchMongoStore to allow for updating the province and image of the store . created an updateIChurch method to allow for updating church images
+- updated church.js to include province and img 
+- updated seedData to include the now hashed passwords
