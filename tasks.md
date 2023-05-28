@@ -266,3 +266,4 @@ version 0.11.0
 - updated the updateChurch method in churchMongoStore to allow for updating the province and image of the store . created an updateIChurch method to allow for updating church images
 - updated church.js to include province and img 
 - updated seedData to include the now hashed passwords
+- update to seed data
